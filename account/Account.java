@@ -2,7 +2,7 @@ package account;
 
 //Account newAccount = new Admin();
 public abstract class Account {
-  protected String username;
+  public String username;
   protected String password;
   protected String rankID;
 
