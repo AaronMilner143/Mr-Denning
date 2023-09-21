@@ -8,6 +8,6 @@ public class Member extends Account {
   }
 
   public void displayRank() {
-    System.out.println("I'm a member!");
+    System.out.println("I'm " + this.username + "I'm a Member!");
   }
 }

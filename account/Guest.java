@@ -8,6 +8,6 @@ public class Guest extends Account{
   }
   
   public void displayRank() {
-    System.out.println("I'm a guest!");
+    System.out.println("I'm " + this.username + "I'm a guest!");
   }
 }

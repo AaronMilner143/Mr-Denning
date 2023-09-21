@@ -1,9 +1,10 @@
 import account.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Server {
-  public String accountList[];
+  ArrayList<Account> accountList = new ArrayList<Account>();
   public void serverMenu(){
     Scanner scr1 = new Scanner(System.in); //Scanners will be labeled numerically 
     
@@ -60,18 +61,25 @@ public class Server {
       if (choice == 1) {
         //Guest Acc
         String guestID = ("g" + numberIDGen.nextInt(99999));
-
+        
         Guest newGuest = new Guest(userName, password, guestID);
         newGuest.accDeatails();
+        accountList.add(newGuest);
       }
       else if(choice == 2) {
-        //Member Acc
         String memberID = ("m" + numberIDGen.nextInt(99999));
-        accountList.(username);
+
+        Member newMember = new Member(userName, password, memberID);
+        newMember.accDeatails();
+        accountList.add(newMember);
+        //Member Acc
       }
       else if(choice == 3){
-        //Admin Acc
         String adminID = ("a" + numberIDGen.nextInt(99999));
+        //Admin Acc
+        Admin newAdmin = new Admin(userName, password, adminID);
+        newAdmin.accDeatails();
+        accountList.add(newAdmin);
         
       }
     }catch (Exception e) {
@@ -79,13 +87,27 @@ public class Server {
       accCreation();
     }
     // end accCreation
+    
     serverMenu();
   }
 
   private void accView() {
+    Scanner scr3 = new Scanner(System.in);
     System.out.println("type the name of the account you would like to view");
-    String acc = scr1.nextLine();
-    if()
+    String acc = scr3.nextLine();
+    for(int i=0; i<accountList.size(); i++) {
+       String currentName = accountList.get(i).username;
+       if(currentName.equals(acc)) {
+         accountList.get(i).displayRank();
+         serverMenu();
+       }
+       else {
+         continue;
+       }
+    }
+    System.out.println("could not find account");
+    accView();
+    
   }
 
   private void endProgram() {

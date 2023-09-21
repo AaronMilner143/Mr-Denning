@@ -10,6 +10,6 @@ public class Admin extends Account {
 
   public void displayRank()
   {
-    
+    System.out.println("I'm " + this.username + "I'm a Admin!");
   }
 }
