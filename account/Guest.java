@@ -1,13 +1,14 @@
 package account;
 
-public class Guest extends Account{
-  public Guest(String username, String password, String rankID){
-    this.username = username;
-    this.password = password;
-    this.rankID = rankID;
+public class Guest extends Account {
+  Guest(String username, String password, int id) {
+    super(username, password, id);
   }
-  
-  public void displayRank() {
-    System.out.println("I'm " + this.username + "I'm a guest!");
+  // constructor refering all variables to superclass constructor
+
+  public String overviewMessage() {
+    return ("I am a Guest " + "\n my ID is " + Integer.toString(this.getID()));
   }
+  //says rank and id
+
 }

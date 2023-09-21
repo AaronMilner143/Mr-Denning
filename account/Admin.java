@@ -1,15 +1,13 @@
 package account;
 
 public class Admin extends Account {
-  public Admin(String username, String password, String rankID) {
-    this.username = username;
-    this.password = password;
-    this.rankID = rankID;
-    
+  Admin(String username, String password, int id) {
+    super(username, password, id);
   }
+  // constructor refering all variables to superclass constructor
 
-  public void displayRank()
-  {
-    System.out.println("I'm " + this.username + "I'm a Admin!");
+  public String overviewMessage() {
+    return ("I am an Admin " + "\n my ID is " + Integer.toString(this.getID()));
   }
+  //returns rank and id
 }
