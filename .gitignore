@@ -1,0 +1,15 @@
+*.log
+
+# Compiled Java files
+*.class
+*.classpath
+*.jar
+
+# IDE
+*.breakpoints
+*.project
+*.replit
+replit.nix
+*.project
+pom.xml
+*.prefs
